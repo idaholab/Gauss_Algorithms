@@ -1,0 +1,145 @@
+JniNotes.txt in Gauss Algorithms (10/5/2016)
+
+This describes how to migrate from using
+the all-C implementation found in GaussLib.DLL
+to using the JNI C wrapper found in GaussAlgs.DLL
+
+
+GENERAL description of changes:
+
+* Each subroutine that invokes a Java method has three new
+  arguments. The first indicates the location of the Java
+  jars for Gauss Algorithms and Apache commons math. The
+  last two arguments are used to capture any error messages
+  returned by the Java software.
+
+* Convenience routines for allocating and freeing memory
+  for a spectrum have been added.
+
+* The GLSpectrum.sigcounts are set and used entirely within
+  the Java code, so the C programmer no longer needs to
+  interact directly with this data.
+
+* The peak search always returns the peak refinement, so
+  the input argument to control refinement has been
+  removed. Also, the search results now include a flag in
+  GLPeakRefinement to indicate whether the refinement
+  should be used. The peak list returned in the search
+  results still contains the usual answer.
+
+* A new method for checking region widths has been added.
+
+* All trace of the "split fitting mode" has been removed.
+
+* The fit results now include ALL inputs, as well as a
+  summary and a curve. Therefore, the C programmer no
+  longer needs to interact directly with intermediate fit
+  results.
+
+* Because GL_fitreclist_free() was added to the public
+  interface (some years ago), it is no longer necessary
+  for the GL_fitregn() subroutine to check for and free
+  the fit list that is passed in. It is now the user's
+  sole responsibility to free the list before passing
+  the pointer back into another call of GL_fitregn().
+
+* The summary now includes an indication of which peak has
+  a fixed centroid.
+
+* The fit alarms have been moved from subroutines to fields
+  within each summary.
+
+* All of the memory for a fit result is allocated
+  internally, and only one method is needed to free all
+  of a fit result (linked list of fits). So the methods
+  to allocate or free summaries and curves are no
+  longer needed.
+
+* All trace of post-processing has been removed.
+
+
+DETAILS of the changes:
+
+* The name of the include file has changed from GaussLib.h
+  to GaussAlgsLib.h.
+
+* Definitions deleted
+  * GL_COVARR_DIM
+  * GL_MAX_EFFICY
+  * GL_NUM_COEFFS
+
+* Typedefs deleted
+  * GLEfficiency
+  * GLFitInfo
+  * GLPeakInfo
+  * GLPostInfo
+  * GLSplitMode
+
+* Typedefs added
+  * GLCycleReturn
+
+* Typedefs modified
+  * GLFitParms
+    (deleted field: split_mode)
+  * GLFitRecord
+    (deleted fields: lmder_info, fitinfo, uncertainty,
+                     back_covarr, covarr)
+    (new fields: used_spectrum, input_peaks, cycle_return,
+                 cycle_exception, summary, curve)
+  * GLPeakRefinement
+    (new field: use_refinement)
+  * GLPeakSearchResults
+    (renamed field: crossproducts to crosscorrs)
+  * GLRtnCode
+    (new fields: GL_NOJVM, GL_JNIERROR, GL_JEXCEPTION)
+  * GLSpectrum
+    (deleted field: sigcount)
+  * GLSummary
+    (new fields: fixed, negpeak_alarm, outsidepeak_alarm,
+                 posnegpeakpair_alarm)
+
+* Subroutines deleted
+  * GL_curve
+  * GL_curve_alloc
+  * GL_curve_free
+  * GL_fitrec_alloc
+  * GL_fitrec_free
+  * GL_get_big_resid_peak
+  * GL_get_neg_peak
+  * GL_get_outside_peak
+  * GL_get_posneg_peakpair
+  * GL_postprocess
+  * GL_set_sigcount
+  * GL_spline
+  * GL_summ_alloc
+  * GL_summ_free
+  * GL_summarize
+
+* Subroutines added
+  * GL_exceeds_width
+  * GL_spectrum_counts_alloc
+  * GL_spectrum_counts_free
+
+* Subroutines renamed
+  * GL_find_regnpks to GL_get_regnpks
+
+* Subroutines modified
+  * These subroutines each have three new arguments
+        1. const char *java_class_path
+        2. char *error_message
+        3. int error_message_length
+    * GL_ecalib
+    * GL_fitregn
+    * GL_get_version
+    * GL_peaksearch
+    * GL_prune_rqdpks
+    * GL_regnsearch
+    * GL_wcalib
+  * This subroutine has a renamed argument
+    * GL_fitregn: chanrange renamed region
+  * This subroutine has an additional argument
+    * GL_fitregn: nplots_per_chan
+  * This subroutine has a removed argument
+    * GL_peaksearch: refine
+
+

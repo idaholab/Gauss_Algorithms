@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
+<jardesc>
+    <jar path="C:/Users/ae1/software development/GaussAlgs/lib/GaussAlgorithms.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/Gauss Algorithms/GaussAlgsJarDescription.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="true" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="true">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{ChannelRange.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{Summary.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{RegionSearchParameters.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{LmderFcn.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{SearchPeak.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{Spectrum.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{WidthCalibrating.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{Peak.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{BackgroundEquation.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{WidthEquation.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{RegionFitting.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{FitVary.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{FitInfo.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{FitParameters.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{PeakSearching.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{PeakSearchResults.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{Version.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{EnergyEquation.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{CalibPair.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{LeastSquareFitting.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{RegionSearching.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{InlGaussian.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{Curve.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{Fit.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{EnergyCalibrating.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{FitInfoUncertainty.java"/>
+        <javaElement handleIdentifier="=Gauss Algorithms/&lt;gov.inl.gaussAlgorithms{FitInputs.java"/>
+    </selectedElements>
+</jardesc>

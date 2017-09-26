@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/ae1/software development/GaussAlgs/commons-math3-3.3/commons-math3-3.3.jar" sourcepath="C:/Users/ae1/software development/GaussAlgs/commons-math3-3.3/commons-math3-3.3-src.zip">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/Users/ae1/software%20development/freeware/apache%20commons%20math/rev%203.3/commons-math3-3.3/docs/apidocs/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="classes"/>
+</classpath>

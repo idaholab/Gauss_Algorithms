@@ -1,0 +1,57 @@
+
+
+	Instructions for Gauss Algorithms        (6/28/2017)
+
+
+These are general instructions for compiling and using the
+Gauss Algorithms library in either the C/C++ or the Java
+program language.
+
+
+For Java programming:
+
+    Information can be found in GaussAlgorithms-javadoc.jar.
+	Insights may be gained by browsing gaussman.pdf.
+	
+	To create GaussAlgorithms.jar:
+	1. Download Apache Commons Math 3.3.
+	2. Download Java 8 SDK.
+
+	
+For C/C++ programming:
+
+    First construct GaussAlgorithms.jar, because the C code is a
+	JNI wrapper of this jar.
+
+    To compile the Gauss Algorithms library, set paths to the Java
+	JNI include files and library. Browse this textual Visual Studio
+	configuration file for hints:
+	  "C Source\GaussAlgs DLL\GaussAlgs DLL.vcxproj"
+
+	To use the Gauss Algorithms DLL:
+    1. Browse "C Source\GaussAlgs DLL\GaussAlgsLib.h".
+	2. Browse gaussman.pdf.
+	3. Browse the C source code for the example test program
+	   located in "C Source\GaussAlgs Test DLL".
+	
+	To use the test program:
+	1. First build the executable.
+	2. Add the locations of the JVM and the Gauss Algorithms DLL
+	   to your runtime path. The locations will be something like:
+	   for the JVM: "<insert Java SDK location>\jre\bin\client"
+	   for the Gauss Algorithms DLL: "C Source\GaussAlgs DLL\Debug"
+	3. Launch the executable, passing in two arguments in this order:
+	    a. "java class path"
+		b. "filename of spectrum"
+		where the java class path might look something like:
+		"c:\user\<you>\GaussAlgs\lib\GaussAlgorithms.jar;c:\user\<you>\commons-math3-3.3\commons-math3-3.3.jar"
+		and the filename of spectrum might look something like:
+		"c:\user\<you>\GaussAlgs\test\PGNAA_antifreeze.Chn"
+	4. Browse the example batch file "test\launchGaussTemplate.bat" for hints.
+	
+
+Acknowledgments:
+
+	This computer software was prepared by Battelle Energy
+	Alliance, LLC, under Contract No. AC07-05ID14517 with the
+	United States Department of Energy.
