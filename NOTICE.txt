@@ -1,5 +1,5 @@
-﻿This project contains code from Idaho National Laboratory’s Gauss Algorithms
-https://github.com/IdahoLab/GaussAlgorithms
+This project contains code from Idaho National Laboratory’s Gauss Algorithms
+https://github.com/IdahoLab/Gauss_Algorithms
 Licensed under the Mozilla Public License version 2.0
 
 Copyright 2017 Battelle Energy Alliance, LLC
